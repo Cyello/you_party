@@ -8,11 +8,12 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Auth;
 use Hash;
+use App\User;
 
 class UserController extends Controller {
 
-    public function getPosts (Request $request) {
-        $posts = User::find($request->id)->posts;
+    public function getPosts ($id) {
+        $posts = User::find($id)->posts;
         return $posts;
     }
 
@@ -22,9 +23,8 @@ class UserController extends Controller {
             return Auth::user();
         }
 
-         else 
+        else 
             throw new \Exception("Erro ao realizar login.");
-
     }
 
     public function doLogout () {
@@ -73,8 +73,7 @@ class UserController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
+    public function create() {
         //
     }
 
@@ -84,8 +83,7 @@ class UserController extends Controller {
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         //
     }
 
@@ -95,8 +93,7 @@ class UserController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
         //
     }
 
@@ -106,8 +103,7 @@ class UserController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
+    public function edit($id) {
         //
     }
 
@@ -118,8 +114,7 @@ class UserController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id) {
         //
     }
 
@@ -129,8 +124,7 @@ class UserController extends Controller {
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
+    public function destroy($id) {
         //
     }
 }

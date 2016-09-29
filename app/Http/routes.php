@@ -1,7 +1,4 @@
 <?php
-use App\Post;
-use Carbon\Carbon;
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -22,7 +19,6 @@ Route::get('/comments', 'CommentController@getComments');
 Route::get('/postcomments/{id}', 'CommentController@getCommentByPost');
 Route::post('savecomment', 'CommentController@saveComment');
 
-
 // rotas sobre posts
 
 Route::get('/posts', 'PostController@getAll');
@@ -30,10 +26,9 @@ Route::post('/savepost', 'PostController@save');
 Route::delete('/destroypost', 'PostController@destroy');
 Route::get('/postlikes', 'PostController@getAllLikes');
 
-
 // Rotas sobre usuários
 
-Route::get('/userposts', 'UserController@getPosts');
+Route::get('/userposts/{id}', 'UserController@getPosts');
 Route::post('/login', 'UserController@doLogin');
 Route::get('/logout', 'UserController@doLogout');
 Route::post('/createlogin', 'UserController@createLogin');
