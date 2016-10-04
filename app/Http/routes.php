@@ -11,7 +11,7 @@
 */
 
 Route::get('/', function () {
-	return "Bem vindo à API REST do  you party";
+	return Redirect::to('/index.html');
 });
 
 // rotas sobre comentários
